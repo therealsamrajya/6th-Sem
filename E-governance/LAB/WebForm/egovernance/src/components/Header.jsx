@@ -1,6 +1,7 @@
 import React from "react";
-import { image2, image3 } from "../assets/assets";
+import { image2, image3, image4 } from "../assets/assets";
 import Button from "./Button";
+import { BsFillTelephoneForwardFill } from "react-icons/bs";
 
 const Header = () => {
   return (
@@ -30,6 +31,22 @@ const Header = () => {
               value="Learn More"
               className="bg-primary rounded-lg px-3 py-1 hover:text-primary hover:bg-secondary"></Button>
           </div>
+        </div>
+      </div>
+      <div className="bg-primary flex max-sm:flex-col">
+        <img src={image4} width={900} alt="" />
+        <div className="text-white flex flex-row items-center px-[5rem] gap-4">
+          <BsFillTelephoneForwardFill className="w-5 h-5" />
+          <span className=" whitespace-pre text-2xl">
+            Emergency Contact
+            <br />
+            012345678,1234567
+            <br />
+            <a href="http://dohs.gov.np/" className="px-9 hover:text-one">
+              {" "}
+              Our Website
+            </a>
+          </span>
         </div>
       </div>
     </div>

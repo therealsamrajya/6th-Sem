@@ -11,6 +11,7 @@ const FeedbackForm = () => {
     Severity: "",
     previousMedication: "No",
     medicationDetails: "",
+    breathing: "",
   });
 
   const handleInputChange = (e) => {
@@ -36,6 +37,7 @@ const FeedbackForm = () => {
       Severity: "",
       previousMedication: "No",
       medicationDetails: "",
+      breathing: "",
     });
   };
 
@@ -127,6 +129,7 @@ const FeedbackForm = () => {
               name="previousMedication"
               value={formData.previousMedication}
               onChange={handleInputChange}
+              className="px-2"
               required>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -146,6 +149,20 @@ const FeedbackForm = () => {
               />
             </label>
           )}
+          <label>
+            {" "}
+            Did you had difficulty in breathing?
+            <select
+              name="breathing"
+              value={formData.breathing}
+              onChange={handleInputChange}
+              className="px-2"
+              required>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </label>
+          <br />
 
           <Button
             value="Submit"
