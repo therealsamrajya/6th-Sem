@@ -6,7 +6,7 @@
     <RootNamespace>lab1._1</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>lab1._1.Delegate</StartupObject>
+    <StartupObject>Program</StartupObject>
   </PropertyGroup>
 
 </Project>

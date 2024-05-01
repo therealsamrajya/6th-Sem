@@ -12,7 +12,7 @@ int consonants = 0;
 
 int main() {
     char input[100];
-printf("Samrajya Chand\n");
+printf("Arjun Dahal\n");
     printf("Enter a string: ");
     if (fgets(input, sizeof(input), stdin) == NULL) {
         printf("Error reading input\n");

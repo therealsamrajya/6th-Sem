@@ -9,7 +9,7 @@
 
 int main() {
     char input[100];
-    printf("Samrajya Chand");
+    printf("Arjun Dahal");
     printf("Enter a string: ");
     if (fgets(input, sizeof(input), stdin) == NULL) {
         printf("Error reading input\n");
