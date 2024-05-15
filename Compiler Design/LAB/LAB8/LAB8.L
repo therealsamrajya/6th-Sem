@@ -1,25 +1,32 @@
 %{
-#include<stdio.h>
-int character=0,word=0,line=0;	
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 %}
 
-%%
-
-int|char|float|double|void { printf("KEYWORD: %s\n", yytext); }
-if|else|for|while|do|switch|case|break|continue|return { printf("CONTROL: %s\n", yytext); }
-[a-zA-Z_][a-zA-Z0-9_]* { printf("IDENTIFIER: %s\n", yytext); }
-[0-9]+ { printf("NUMBER: %s\n", yytext); }
-"=="|"!="|"<"|">"|"<="|">="|"="|"+"|"-" { printf("OPERATOR: %s\n", yytext); }
-\"(\\.|[^"])*\" { /* Ignore strings */ }
-" " {printf("SPACE: %s\n", yytext);}
-. { printf("ERROR: Unrecognized token: %s\n", yytext); }
+keyword[int|float|char|void|main|function|return|if|while|do|for|else|switch]
+number [0-9]+
+identifier [a-zA-Z_][a-zA-Z0-9_]*
+operator [+-/*=]+
 
 %%
+int|float|char|void|main|function|return|if|while|do|for|else|switch { printf("%s: keyword\n", yytext); }
+[0-9]+ { printf("%s: number \n", yytext); }
+[a-zA-Z_][a-zA-Z0-9_]* { printf("%s: id \n", yytext); }
+[+-/*=]+ { printf("%s: operator \n", yytext);}
+\"(\\.|[^"])*\"         
+ . {}
+%%
 
-int yywrap(){return 0;}
-int main()
+
+int main(int argc[],char *argv[])
 {
-    yyin = fopen("test.c","r");
-    yylex();
-    return 0;
+printf("Samrajya Chand \n");
+printf("enter input \n");
+ yyin=fopen("input.c", "r"); 
+ yylex();  
+ return 0;
+}
+int yywrap() {
+    return 1; 
 }
